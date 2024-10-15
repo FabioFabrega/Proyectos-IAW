@@ -3,11 +3,10 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './web.css'
 import Web from './Web'
-import {Prueba,fabio} from './Prueba'
+import { Cabecera, Cabecera1 } from './Cabecera.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Prueba/>
-    <fabio/>
+    <Web/>
   </StrictMode>,
 )
