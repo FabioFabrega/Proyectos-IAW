@@ -21,8 +21,8 @@ export function Cabecera1() {
   export function Cabecera3(mensaje='mensjae por defecto', otro) {
     return (
     <>
-      <li>{mensaje}</li>
-      <li>{otro}</li>
+      <ul>{mensaje}</ul>
+      <ul>{otro}</ul>
     </>
     )
   }
