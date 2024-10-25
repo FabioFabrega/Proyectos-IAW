@@ -1,0 +1,8 @@
+footer{
+    width: 150px;
+    background-color: antiquewhite;
+    display: flex;
+    flex: row nowrap;
+    align-items: center;
+    justify-content: end;
+}
