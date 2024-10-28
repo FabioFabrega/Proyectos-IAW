@@ -6,6 +6,7 @@ export default function Rutas() {
  <Routes>
  <Route exact path="/" element={<Home/>} />
  <Route path="/nombre" element={<MySkills/>} />
+ <Route path="/producto/:numero" element={<Producto/>} />
  <Route path="/about" element={<About/>} />
  </Routes>
  </Router>
@@ -22,4 +23,9 @@ function Home() {
 //Sólo se verá con /about en la URL
 function About() {
  return <div>about</div>;
+}
+function Producto() {
+    //Lectura del parámetro de la URL
+    const params = useParams();
+    return <h2>Parámetro introducido: {params.nombre}</h2>;
 }
