@@ -1,7 +1,11 @@
 import React from 'react'
+import './Section.module.css'
 
 export default function Section() {
   return (
-    <section>Section</section>
+    <section>
+      <article>Tarjeta</article>
+      <article>Galería</article>
+    </section>
   )
 }
