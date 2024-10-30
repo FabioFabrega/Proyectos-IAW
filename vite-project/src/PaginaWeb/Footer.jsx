@@ -6,8 +6,8 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div><a href='https://react-icons.github.io/react-icons/search/#q=Whatsapp'><FaWhatsapp />Whatsapp</a>
-    <a href='https://react-icons.github.io/react-icons/search/#q=instagram'><FaInstagram />Instagram</a>
-    <a href='https://react-icons.github.io/react-icons/search/#q=facebook'><FaFacebook />Facebook</a></div>
+    <div><a href='https://react-icons.github.io/react-icons/search/#q=Whatsapp'><FaWhatsapp /></a>
+    <a href='https://react-icons.github.io/react-icons/search/#q=instagram'><FaInstagram /></a>
+    <a href='https://react-icons.github.io/react-icons/search/#q=facebook'><FaFacebook /></a></div>
   )
 }
