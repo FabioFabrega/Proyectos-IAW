@@ -4,8 +4,8 @@ export default function Nav() {
   return (
     <div>
     <a href='/'>Inicio</a>
-    <a href='/noticias'>Noticias</a>
-    <a href='/about'>Contactanos</a>
+    <a href='/Contacto'>Contacto</a>
+    <a href='/Servicios'>Servicios</a>
     </div>
   )
 }

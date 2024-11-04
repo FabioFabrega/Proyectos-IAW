@@ -1,7 +1,16 @@
 import React from 'react'
+import BasicSelect from '../Select'
+import { Route, Routes } from 'react-router-dom'
 
-export default function Aside() {
+function Aside() {
   return (
-    <div>Aside</div>
+    <aside>
+      <BasicSelect />
+      <div>
+      <iframe width="560" height="315"></iframe>
+      </div>
+    </aside>
   )
 }
+
+export default Aside

@@ -1,8 +1,15 @@
 footer{
     width: 150px;
-    background-color: antiquewhite;
+    background-color: black;
     display: flex;
     flex: row nowrap;
     align-items: center;
     justify-content: end;
+}
+div a{
+    font-size:40px;
+    color: lightblue;
+}
+div a:hover{
+    color:orange;
 }
