@@ -4,6 +4,7 @@ import Nav from './Nav'
 import Aside from './Aside'
 import Section from './Section'
 import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
+import { Pokemon } from './Pokemon'
 
 export default function Contenido() {
   return (
@@ -35,7 +36,7 @@ export default function Contenido() {
 
 
 function Home() {
-  return <div>home</div>;
+  return <div><Pokemon/></div>;
 }
 
 //Sólo se verá con /about en la URL
