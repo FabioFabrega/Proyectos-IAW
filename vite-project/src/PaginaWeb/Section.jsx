@@ -1,13 +1,14 @@
 import React from 'react'
-import './Section.module.css'
+import './section.module.css'
+import ControlledCarousel from '../Carousel'
+import { Card } from '@mui/material'
 import Tarjeta from './Cards'
-import Carrusel from '../Carousel'
 
 function Section() {
   return (
     <section>
       <article> <Tarjeta/> <Tarjeta/>  <Tarjeta/> </article>
-      <Carrusel/>
+      <ControlledCarousel/>
     </section>
   )
 }

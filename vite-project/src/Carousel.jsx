@@ -26,7 +26,7 @@ function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img width="600px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg/280px-Dawn_Charles_V_Palace_Alhambra_Granada_Andalusia_Spain.jpg" alt="Alhambra" />
+        <img width="600px" src="/alhambra.jpg" alt="Alhambra" />
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>

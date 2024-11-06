@@ -1,9 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import PaginaWeb from './PaginaWeb/Web'
+import './index.css'
+import Web from './paginaWeb/Web'
+// import App from './App'
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PaginaWeb/>
+    <Web />
+    {/* <App/> */}
   </StrictMode>,
 )

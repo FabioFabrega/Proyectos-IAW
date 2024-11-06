@@ -1,18 +1,17 @@
 footer{
-    width: 150px;
-    background-color: black;
-    display: flex;
-    flex: row nowrap;
+    width:100%;
+    height:100px;
+    background-color: antiquewhite;
+    display:flex;
+    flex:row nowrap;
     align-items: center;
     justify-content: end;
 }
-div a{
-    font-size:20px;
-    color: lightblue;
+
+footer a{
+    font-size:30px;
+    color:black;
 }
-div a:hover{
-    color:orange;
-}
-.footer {
-    font-size: 80;
+footer a:hover{
+    color:red;
 }

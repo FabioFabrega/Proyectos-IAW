@@ -1,28 +1,31 @@
 import React from 'react'
 
-export function Cabecera() {
+export  function Cabecera() {
   return (
-    <h1>Clase IAW 24/25</h1>
+    <h1>Clase de IAW del curso 2024-25</h1>
   )
 }
-export function Cabecera1() {
-    return (
-      <h2>Asignaturas ASIR</h2>
-    )
-  }
-  export function Cabecera2(props , otro) {
-    return (
-        <>
+
+export  function Cabecera1() {
+  return (
+    <h2>Usando otra cabecera</h2>
+  )
+}
+
+export  function Cabecera2(props) {
+  return (
+    <>
       <li>{props.mensaje}</li>
       <li>{props.otro}</li>
-      </>
-    )
-  }
-  export function Cabecera3(mensaje='mensjae por defecto', otro) {
-    return (
-    <>
-      <ul>{mensaje}</ul>
-      <ul>{otro}</ul>
     </>
-    )
-  }
+  )
+}
+
+export  function Cabecera3({mensaje,otro}) {
+  return (
+    <>
+      <li>{mensaje}</li>
+      <li>{otro}</li>
+    </>
+  )
+}
