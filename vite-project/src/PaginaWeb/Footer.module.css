@@ -7,9 +7,12 @@ footer{
     justify-content: end;
 }
 div a{
-    font-size:40px;
+    font-size:20px;
     color: lightblue;
 }
 div a:hover{
     color:orange;
+}
+.footer {
+    font-size: 80;
 }
