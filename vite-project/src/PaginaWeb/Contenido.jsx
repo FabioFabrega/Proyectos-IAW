@@ -1,56 +1,69 @@
 import React from 'react'
-import './Contenido.module.css'
 import Nav from './Nav'
-import Aside from './Aside'
-import Section from './Section'
 import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
-import { Pokemon } from './Pokemon'
+import Section from './Section'
+import Aside from './Aside'
 
-export default function Contenido() {
+import './contenido.module.css'
+import Rutas from './Rutas'
+import { CambiarNombre } from './CambiarNombre';
+import Tarjeta from './Cards';
+import ControlledCarousel from '../Carousel';
+
+
+function Contenido() {
   return (
-    <div>
+    <>
+    <Router>
     <Nav/>
     <main>
-        <Aside>
+    
+      <aside>
+        <Aside/>
         <Routes>
-          <Route path="/about" element={<About/>} />
+          <Route path="/about" element={<About2/>} />
         </Routes>
-      </Aside>
+      </aside>
         {/* <Section/> */}
-        <Section>
+        <section>
         <Routes>
         <Route exact path="/" element={<Home/>} />
-	      <Route path="/noticias" element={<MySkills/>}>
+	      <Route path="/noticias" element={<Noticias/>}>
           <Route path="/noticias/jefatura" element={<Jefatura/>} />  
           <Route path="/noticias/informatica" element={<Informatica/>} />  
         </Route>
-        {/* <Route path="/producto/:numero" element={<Producto/>} /> */}
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
-        </Routes>
-        </Section>
+        </Routes>  
+        <Tarjeta/>
+        <Tarjeta/>
+        <Tarjeta/>
+        <ControlledCarousel/>
+        </section>
+    
     </main>
-    </div>
+    </Router>
+    </>
   )
 }
 
-
+export default Contenido
 function Home() {
-  return <div><Pokemon/></div>;
+  return ;
 }
 
 //Sólo se verá con /about en la URL
-function About() {
-  return <div>about</div>;
+function About(){
+  return <h2>ABOUT</h2>
 }
-function MySkills() {
+
+function About2() {
+  return <h2>Datos en aside</h2>;
+}
+function Noticias() {
     return <div>
       <h1>NOTICIAS DE HUÉRCAL OVERA</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, labore in tempora quae debitis reiciendis tempore eos laborum rerum officia, ipsam doloribus iusto repudiandae earum sunt voluptatibus alias doloremque beatae!
-      Ipsa numquam, error ducimus, voluptate libero sit rem eius dolores neque porro tenetur culpa dolorem cupiditate, doloribus totam odio sint officia iusto eveniet ab labore. Esse dolore molestias perspiciatis ullam?
-      Quam quasi quas laudantium ipsam fugit ullam? Aliquam molestiae perferendis odio. Dolorum perspiciatis cum ratione nihil pariatur non voluptatum, ducimus repellat minus! Tempore distinctio, rem similique incidunt blanditiis veritatis facilis!
-      Fuga, recusandae. Similique provident id accusantium commodi maxime ea doloremque fugiat vel dignissimos! Veritatis saepe minus maiores magnam assumenda accusantium similique praesentium nam, vel doloribus placeat ullam repudiandae repellat? Delectus.
-      Distinctio consequuntur quaerat reiciendis, id animi repudiandae enim quae! Amet eaque ad reiciendis corrupti, ullam hic maxime ea enim est totam? Eum explicabo vitae est praesentium nihil. Quam, error iusto.</p>
+      <p>SE HA TERMINADO LA ALERTA ROJA POR INUNDACIÓN </p>
       <hr/>
       <Outlet/>
     </div>
@@ -70,8 +83,15 @@ function NotFound() {
 }
 
 function Jefatura() {
-  return <h2>NOTICIAS DE JEFATURA</h2>;
+  return <>
+   
+  <h2>NOTICIAS DE JEFATURA</h2>;
+  </>
 }
 function Informatica() {
-  return <h2>NOTICIAS DE INFORMÁTICA</h2>;
+  return <>
+  
+ <h2>NOTICIAS DE INFORMATICA</h2>
+ <p>¿quieres conocer los nuevos avances en tecnología</p>
+ </>
 }

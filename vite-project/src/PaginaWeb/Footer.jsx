@@ -1,13 +1,19 @@
 import React from 'react'
-import './Footer.module.css'
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import './footer.module.css'
+/* Iconos MaterialUI */
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
-export default function Footer() {
+
+
+function Footer({RRSS}) {
   return (
-    <div><a href='https://react-icons.github.io/react-icons/search/#q=Whatsapp'><FaWhatsapp /></a>
-    <a href='https://react-icons.github.io/react-icons/search/#q=instagram'><FaInstagram /></a>
-    <a href='https://react-icons.github.io/react-icons/search/#q=facebook'><FaFacebook /></a></div>
+    <footer>
+        <a href="https://www.instagram.com/explore/locations/115645025115521/ies-cura-valera/"><InstagramIcon/> Instagram</a>
+        <a href="https://www.facebook.com/p/IesCura-Valera-100064751317201/"><FacebookIcon/>Facebook</a>
+        <a href="https://iescuravalera.es" > <img src="/logo.png" width="50"/> IES Cura Valera </a>
+    </footer>
   )
 }
+
+export default Footer
