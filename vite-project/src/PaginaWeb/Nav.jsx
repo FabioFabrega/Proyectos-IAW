@@ -1,8 +1,8 @@
 import React from 'react'
-import { IoIosContact } from "react-icons/io";
+import { BsFillTelephoneFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import { FaHouse } from "react-icons/fa6";
-import { TbNetwork } from "react-icons/tb";
+import { MdMiscellaneousServices } from "react-icons/md";
 
 
 
@@ -10,8 +10,8 @@ function Nav() {
   return (
     <nav>
         <Link to="/"><FaHouse />Inicio</Link>
-        <Link to="/noticias"><TbNetwork />Noticias</Link>  
-        <Link to="/Contacto"><IoIosContact />Contacto</Link>
+        <Link to="/noticias"><MdMiscellaneousServices />Noticias</Link>  
+        <Link to="/Contacto"><BsFillTelephoneFill />Contacto</Link>
     </nav>
   )
 }
