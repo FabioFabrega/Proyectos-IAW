@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RedesSociales from './RedesSociales';
 import Checkboxes from './Checkbox';
 import BasicSelect from './Select';
-/*Importar iconos */
 import { DiAndroid } from "react-icons/di";
 import { FaReact } from "react-icons/fa";
 import AccessibleIcon from '@mui/icons-material/Accessible';
@@ -30,11 +29,9 @@ function Web() {
       <p>Listar los héroes de Marvel del fichero heroes.json</p>
       <ListarItems3/>
       <h3>Tabla con heroes.json</h3>
-      {/* <ListarTabla tipo="DC Comics"/> */}
       <ListarTablas publisher="DC Comics" color="red"/>
 
       <h2> UTILIZANDO BOOTSTRAP</h2>
-      {/* <ControlledCarousel/> */}
       <h2> UTILIZANDO MATERIAL UI</h2>
       <Checkboxes/>
       <BasicSelect/>

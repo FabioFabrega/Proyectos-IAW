@@ -1,12 +1,10 @@
 import React from 'react'
-import style from './header.module.css'
+import './Header.module.css'
 
-function Header() {
+export default function Header() {
   return (
-    <header className={style.cabecera}>
+    <header>
         <h1>MI PRIMERA PÁGINA EN IAW</h1>
     </header>
   )
 }
-
-export default Header

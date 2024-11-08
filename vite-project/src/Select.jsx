@@ -10,7 +10,7 @@ function SuperheroSelect() {
 
   return (
     <div>
-      <h1>Seleccione un Superhéroe</h1>
+      <h4>Seleccione un Superhéroe</h4>
       <select value={selectedHero} onChange={handleChange}>
         <option value="">Seleccione un superhéroe</option>
         {/* Mapea el JSON para crear las opciones en el select */}

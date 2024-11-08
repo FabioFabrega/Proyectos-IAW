@@ -9,6 +9,5 @@ import Web from './paginaWeb/Web'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Web />
-    {/* <App/> */}
   </StrictMode>,
 )
