@@ -3,7 +3,6 @@ import './footer.module.css'
 /* Iconos MaterialUI */
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { FaTwitter } from "react-icons/fa";
 
 
 
