@@ -3,12 +3,11 @@ import Nav from './Nav'
 import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
 import Section from './Section'
 import Aside from './Aside'
-
 import './contenido.module.css'
 import Rutas from './Rutas'
 import { CambiarNombre } from './CambiarNombre';
 import Tarjeta from './Cards';
-import ControlledCarousel from '../Carousel';
+import Carrusel from '../Carousel';
 
 
 function Contenido() {
@@ -24,7 +23,6 @@ function Contenido() {
           <Route path="/about" element={<About2/>} />
         </Routes>
       </aside>
-        {/* <Section/> */}
         <section>
         <Routes>
         <Route exact path="/" element={<Home/>} />
@@ -32,17 +30,13 @@ function Contenido() {
           <Route path="/noticias/jefatura" element={<Jefatura/>} />  
           <Route path="/noticias/informatica" element={<Informatica/>} />  
         </Route>
-        {/* <Route path="/noticias" element={<Noticias/>}/>
-        <Route path="/noticias/jefatura" element={<Jefatura/>}/>
-        <Route path="/noticias/informatica" element={<Informatica/>}/> */}
-        {/* <Route path="/producto/:numero" element={<Producto/>} /> */}
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
         </Routes>  
         <Tarjeta/>
         <Tarjeta/>
         <Tarjeta/>
-        <ControlledCarousel/>
+        <Carrusel/>
         </section>
     
     </main>
