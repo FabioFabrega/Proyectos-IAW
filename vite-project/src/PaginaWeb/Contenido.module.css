@@ -10,6 +10,12 @@ main section{
     width:80%;
     background-color:antiquewhite;
 }
+article {
+    display:flex;
+    flex:row wrap;
+    align-items: center;
+    justify-content: center;
+}
 
 main aside{
     width:20%;

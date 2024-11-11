@@ -1,7 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
 import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
-import Section from './Section'
 import Aside from './Aside'
 import './contenido.module.css'
 import Rutas from './Rutas'
@@ -16,7 +15,6 @@ function Contenido() {
     <Router>
     <Nav/>
     <main>
-    
       <aside>
         <Aside/>
         <Routes>
@@ -26,17 +24,14 @@ function Contenido() {
         <section>
         <Routes>
         <Route exact path="/" element={<Home/>} />
-	      <Route path="/noticias" element={<Noticias/>}>
-          <Route path="/noticias/jefatura" element={<Jefatura/>} />  
-          <Route path="/noticias/informatica" element={<Informatica/>} />  
+	      <Route path="/noticias" element={<Gen1/>}>
+          <Route path="/noticias/Jefatura" element={<Gen2/>} />  
+          <Route path="/noticias/Informatica" element={<Gen3/>} />  
         </Route>
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
-        </Routes>  
-        <Tarjeta/>
-        <Tarjeta/>
-        <Tarjeta/>
-        <Carrusel/>
+        </Routes>
+          
         </section>
     
     </main>
@@ -47,7 +42,7 @@ function Contenido() {
 
 export default Contenido
 function Home() {
-  return ;
+  return <h1>Seleccione uno de los enlaces para ver los pokemons de cada generación</h1>
 }
 
 //Sólo se verá con /about en la URL
@@ -58,15 +53,60 @@ function About(){
 function About2() {
   return <h2>Datos en aside</h2>;
 }
-function Noticias() {
+function Gen1() {
     return <div>
-      <h1>NOTICIAS DE HUÉRCAL OVERA</h1>
-      <p>SE HA TERMINADO LA ALERTA ROJA POR INUNDACIÓN </p>
+      <article><Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/></article>
+      <article><Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/></article>
       <hr/>
       <Outlet/>
     </div>
   }
 
+
+function NotFound() {
+  return <h2>ESTA RUTA NO ES VÁLIDA</h2>;
+}
+
+function Gen2() {
+  return <div>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <hr/>
+  <Outlet/>
+</div>
+}
+function Gen3() {
+  return <div>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <hr/>
+  <Outlet/>
+</div>
+}
 function Producto() {
     //Lectura del parámetro de la URL
     const params = useParams();
@@ -75,21 +115,4 @@ function Producto() {
       return <h2>ESE PRODUCTO NO EXISTE</h2>
     }
     return <h2>PRODUCTO ELEGIDO: {params.numero}</h2>;
-}
-function NotFound() {
-  return <h2>ESTA RUTA NO ES VÁLIDA</h2>;
-}
-
-function Jefatura() {
-  return <>
-   
-  <h2>NOTICIAS DE JEFATURA</h2>;
-  </>
-}
-function Informatica() {
-  return <>
-  
- <h2>NOTICIAS DE INFORMATICA</h2>
- <p>¿quieres conocer los nuevos avances en tecnología</p>
- </>
 }
