@@ -25,9 +25,10 @@ function Contenido() {
         <Routes>
         <Route exact path="/" element={<Home/>} />
 	      <Route path="/noticias" element={<Gen1/>}>
-          <Route path="/noticias/Jefatura" element={<Gen2/>} />  
-          <Route path="/noticias/Informatica" element={<Gen3/>} />  
         </Route>
+        <Route path="/Jefatura" element={<Gen2/>} />
+        <Route path="/Informatica" element={<Gen3/>} />
+        <Route path="/Digimon" element={<Extra/>} />
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
         </Routes>
@@ -107,6 +108,24 @@ function Gen3() {
   <Outlet/>
 </div>
 }
+
+function Extra() {
+  return <div>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <article><Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/>
+  <Tarjeta/></article>
+  <hr/>
+  <Outlet/>
+</div>
+}
+
 function Producto() {
     //Lectura del parámetro de la URL
     const params = useParams();
