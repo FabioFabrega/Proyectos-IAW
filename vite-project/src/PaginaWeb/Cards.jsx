@@ -1,15 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Pokemon2 } from './Pokemonapi';
 
-function Tarjeta(props){
+function Tarjeta(){
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="/paisaje.jpeg" />
-      <Card.Body>
-        <Card.Title>{props.titulo}</Card.Title>
-        <Card.Text>{props.text}</Card.Text>
-        <Button variant="primary">{props.botton}</Button>
-      </Card.Body>
+      <Pokemon2/>
     </Card>
   );
 }
