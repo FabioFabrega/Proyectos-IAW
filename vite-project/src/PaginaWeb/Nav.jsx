@@ -11,7 +11,7 @@ function Nav() {
     <nav>
         <Link to="/"><FaHouse />Inicio</Link>
         <Link to="/noticias"><TbNetwork />Noticias</Link>  
-        <Link to="/Contacto"><IoIosContact />Contacto</Link>
+        <Link to="/contacto"><IoIosContact />Contacto</Link>
     </nav>
   )
 }

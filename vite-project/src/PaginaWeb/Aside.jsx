@@ -5,10 +5,10 @@ import { Route, Routes } from 'react-router-dom'
 function Aside() {
   return (
     <aside>
-      <BasicSelect />
-      <div>
-      <iframe align-items="center" width="560" height="315" src="https://www.youtube.com/embed/wGxDfSWC4Ww?si=M8v6MB5VOe5Z156H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
+      <BasicSelect/>
+      <p>
+      <iframe width="257" height="250" src="https://www.youtube.com/embed/jWjrdz-lLdU?si=wGsgMf6g02rpsygc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </p>
     </aside>
   )
 }
