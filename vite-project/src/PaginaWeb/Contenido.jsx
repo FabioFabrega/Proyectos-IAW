@@ -7,6 +7,7 @@ import Rutas from './Rutas'
 import { CambiarNombre } from './CambiarNombre';
 import Tarjeta from './Cards';
 import Carrusel from '../Carousel';
+import Tarjeta2 from './Cards2'
 
 
 function Contenido() {
@@ -111,16 +112,16 @@ function Gen3() {
 
 function Extra() {
   return <div>
-  <article><Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/></article>
-  <article><Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/>
-  <Tarjeta/></article>
+  <article><Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/></article>
+  <article><Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/>
+  <Tarjeta2/></article>
   <hr/>
   <Outlet/>
 </div>
