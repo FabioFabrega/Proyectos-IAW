@@ -1,11 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Pokemon2 } from './Pokemonapi';
+import { Digimon } from './Digimon';
 
 function Tarjeta2(){
   return (
     <Card style={{ width: '18rem' }}>
-      <Pokemon2/>
+      <Digimon/>
     </Card>
   );
 }
