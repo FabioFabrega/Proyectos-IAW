@@ -9,9 +9,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 function Footer({RRSS}) {
   return (
     <footer>
-        <a href="https://www.instagram.com/explore/locations/115645025115521/ies-cura-valera/"><InstagramIcon/> Instagram</a>
-        <a href="https://www.facebook.com/p/IesCura-Valera-100064751317201/"><FacebookIcon/>Facebook</a>
-        <a href="https://iescuravalera.es" > <img src="/logo.png" width="50"/> IES Cura Valera </a>
+      <h1>Pagina de Pokemon y algo más </h1>
     </footer>
   )
 }

@@ -18,10 +18,13 @@ article {
 }
 
 main aside{
-    width:20%;
-    background-color:yellowgreen;
+    width:10%;
+    background-color:greenyellow;
 }
-
+.desarrollador{
+    display:flex;
+    flex:row wrap;
+}
 @media (max-width:800px){
     aside{
         display:none;

@@ -35,12 +35,10 @@ export const Digimon = () => {
 
   return (
     <div className="digimon-container">
-      <h4>
+      <h3>
         Digimon {digimon.numero}: {digimon.nombre}
-      </h4>
+      </h3>
       <img src={digimon.img} alt={digimon.nombre} className="digimon-image" />
-      <p><strong>Nivel:</strong> {digimon.level} <strong>Tipo:</strong> {digimon.type}</p>
-      <p><strong>Atributo:</strong> {digimon.atribute}</p>
     </div>
   );
 };

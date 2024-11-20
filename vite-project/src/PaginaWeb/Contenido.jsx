@@ -17,7 +17,6 @@ function Contenido() {
     <Nav/>
     <main>
       <aside>
-        <Aside/>
         <Routes>
           <Route path="/about" element={<About2/>} />
         </Routes>
@@ -30,6 +29,7 @@ function Contenido() {
         <Route path="/Jefatura" element={<Gen2/>} />
         <Route path="/Informatica" element={<Gen3/>} />
         <Route path="/Digimon" element={<Extra/>} />
+        <Route path="/Contacto" element={<Contacto/>} />
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
         </Routes>
@@ -127,12 +127,14 @@ function Extra() {
 </div>
 }
 
-function Producto() {
-    //Lectura del parámetro de la URL
-    const params = useParams();
-    
-    if (params.numero <1 || params.numero >100){
-      return <h2>ESE PRODUCTO NO EXISTE</h2>
-    }
-    return <h2>PRODUCTO ELEGIDO: {params.numero}</h2>;
-}
+function Contacto() {
+  const user = {
+    Fabio: { name: 'Fabio', avatar: 'https://joeschmoe.io/api/v1/male/jon' },
+    Juan: { name: 'Juan Francisco', avatar: 'https://joeschmoe.io/api/v1/male/jon' },
+  };
+    return<div>
+    <h1>{user.name}</h1>
+    <img src={user.avatar} alt={user.name} style={{ width: 100, height: 100 }} />
+    <Outlet/>
+  </div>
+};
