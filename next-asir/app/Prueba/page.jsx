@@ -1,8 +1,7 @@
-import React from 'react'
-import Footer from './Footer'
+import Footer from "@/componentes/Footer";
 
-export default function Page() {
-  return (
-    <Footer/>
-  )
+export default function prueba() {
+    return (
+        <Footer/>
+    );
 }
