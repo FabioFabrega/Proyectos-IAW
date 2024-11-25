@@ -133,13 +133,15 @@ function Juan() {
 
   return (
     <div>
-      <h1>Este es el Desarrollador web Juan Francisco Fábrega Martinez</h1>
+      
       {showFirstImage ? (
         <img src="/avatar.jpeg" alt="imagen1" />
       ) : (
         <img src="/avatar2.jpeg" alt="imagen2"  />
       )}
+      <h1>Este es el Desarrollador web Juan Francisco Fábrega Martinez</h1>
     </div>
+    
   );
 }
 
@@ -149,12 +151,14 @@ function Fabio() {
 
   return (
     <div>
-      <h1>Este es el diseñador web Fabio Fábrega da Silva</h1>
+      
       {showFirstImage ? (
         <img src="/avatar.jpeg" alt="imagen1"  />
       ) : (
         <img src="/avatar2.jpeg" alt="imagen2"/>
+        
       )}
+      <h1>Este es el diseñador web Fabio Fábrega da Silva</h1>
     </div>
   );
 }
