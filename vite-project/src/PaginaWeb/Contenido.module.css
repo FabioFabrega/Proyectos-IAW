@@ -21,6 +21,12 @@ main aside{
     width:10%;
     background-color:greenyellow;
 }
+img{
+    display:flex;
+    flex:row wrap;
+    justify-content: center;
+    width: 20%;
+}
 .desarrollador{
     display:flex;
     flex:row wrap;

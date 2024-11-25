@@ -29,7 +29,8 @@ function Contenido() {
         <Route path="/Jefatura" element={<Gen2/>} />
         <Route path="/Informatica" element={<Gen3/>} />
         <Route path="/Digimon" element={<Extra/>} />
-        <Route path="/Contacto" element={<Contacto/>} />
+        <Route path="/Contacto" element={<Fabio/>} />
+        <Route path="/Contacto2" element={<Juan/>} />
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
         </Routes>
@@ -127,14 +128,33 @@ function Extra() {
 </div>
 }
 
-function Contacto() {
-  const user = {
-    Fabio: { name: 'Fabio', avatar: 'https://joeschmoe.io/api/v1/male/jon' },
-    Juan: { name: 'Juan Francisco', avatar: 'https://joeschmoe.io/api/v1/male/jon' },
-  };
-    return<div>
-    <h1>{user.name}</h1>
-    <img src={user.avatar} alt={user.name} style={{ width: 100, height: 100 }} />
-    <Outlet/>
-  </div>
-};
+function Juan() {
+  const showFirstImage = Math.random() < 0.5;
+
+  return (
+    <div>
+      <h1>Este es el Desarrollador web Juan Francisco Fábrega Martinez</h1>
+      {showFirstImage ? (
+        <img src="/avatar.jpeg" alt="imagen1" />
+      ) : (
+        <img src="/avatar2.jpeg" alt="imagen2"  />
+      )}
+    </div>
+  );
+}
+
+
+function Fabio() {
+  const showFirstImage = Math.random() < 0.5;
+
+  return (
+    <div>
+      <h1>Este es el diseñador web Fabio Fábrega da Silva</h1>
+      {showFirstImage ? (
+        <img src="/avatar.jpeg" alt="imagen1"  />
+      ) : (
+        <img src="/avatar2.jpeg" alt="imagen2"/>
+      )}
+    </div>
+  );
+}
