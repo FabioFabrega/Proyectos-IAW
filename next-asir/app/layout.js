@@ -7,7 +7,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { getDictionary } from "@/componentes/diccionario";
 import  "bootstrap/dist/css/bootstrap.min.css";
-import AddBootstrap from "./Bootstrap/Addboostrap";
+import Carousel from "./Andalucia/page";
 
 
 const geistSans = localFont({
@@ -41,7 +41,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <AddBootstrap/>
         <header><Image src="/header.jpg" width="500" height="400" alt="Cabecera de la página"></Image></header>
           <nav>
             <Link href="/">{dict.home}</Link> - 
@@ -58,6 +57,7 @@ export default function RootLayout({ children }) {
           <h1>{dict.title}</h1>
           <h2>{dict.description}</h2>
           {children}</main>
+        <Carousel/>
         <Footer/>
       </body>
     </html>
