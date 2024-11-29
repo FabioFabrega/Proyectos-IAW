@@ -2,12 +2,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
-import Footer from "@/componentes/Footer";
 import { Suspense, useState } from "react";
 import Link from "next/link";
 import { getDictionary } from "@/componentes/diccionario";
 import  "bootstrap/dist/css/bootstrap.min.css";
-import Carousel from "./Andalucia/page";
+import Tarjeta from "./Cartas/Card";
 
 
 const geistSans = localFont({
@@ -41,10 +40,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <header><Image src="/header.jpg" width="500" height="400" alt="Cabecera de la página"></Image></header>
+        <header>
           <nav>
             <Link href="/">{dict.home}</Link> - 
-            <Link href="/Pokemon">Pokemon React</Link> - 
+            <Link href="/Pokemon">Generaciones</Link> - 
             <Link href="/esperando">{dict.esperando}</Link>
             <button onClick={() => changeLanguage('es')} className="botton">
 	<Image src="/Españita.jpeg" alt="Español" width={24} height={24} />
@@ -52,13 +51,15 @@ export default function RootLayout({ children }) {
 <button onClick={() => changeLanguage('en')} className="botton">
 	<Image src="/uk.png" alt="Inglés" width={24} height={24} />
 </button>
-          </nav>
+<button onClick={() => changeLanguage('it')} className="botton">
+	<Image src="/italiano.png" alt="italiano" width={24} height={24} />
+  </button>
+          </nav></header>
           <main>
           <h1>{dict.title}</h1>
           <h2>{dict.description}</h2>
-          {children}</main>
-        <Carousel/>
-        <Footer/>
+          <Tarjeta/>
+          </main>
       </body>
     </html>
   );
