@@ -42,9 +42,11 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <header>
           <nav>
-            <Link href="/">{dict.home}</Link> - 
-            <Link href="/Pokemon">Generaciones</Link> - 
-            <Link href="/esperando">{dict.esperando}</Link>
+            <h5><Link href="/">{dict.home}</Link> - 
+            <Link href="/Pokemon" className="principal">Generaciones</Link>
+              <Link href="/Cartas/pokemon1/Tarjetas" className="enlaces">Generacion 1</Link>
+              <Link href="/Cartas/pokemon2/Tarjetas" className="enlaces">Generacion 2</Link>
+              <Link href="/Cartas/pokemon3/Tarjetas" className="enlaces">Generacion 3</Link> - 
             <button onClick={() => changeLanguage('es')} className="botton">
 	<Image src="/Españita.jpeg" alt="Español" width={24} height={24} />
 </button>
@@ -54,7 +56,7 @@ export default function RootLayout({ children }) {
 <button onClick={() => changeLanguage('it')} className="botton">
 	<Image src="/italiano.png" alt="italiano" width={24} height={24} />
   </button>
-          </nav></header>
+          </h5></nav></header>
           <main>
           <h1>{dict.title}</h1>
           <h2>{dict.description}</h2>
