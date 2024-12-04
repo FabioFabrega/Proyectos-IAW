@@ -3,10 +3,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./globals.css";
 import Image from "next/image";
 import { Suspense, useState } from "react";
-import Link from "next/link";
 import { getDictionary } from "@/componentes/diccionario";
 import  "bootstrap/dist/css/bootstrap.min.css";
-import Tarjeta from "./Cartas/page";
+import { Pokemon } from '@/componentes/Pokemon';
 
 export default function RootLayout({ children }) {
   let [idioma,setIdioma]=useState('en');
@@ -39,7 +38,7 @@ export default function RootLayout({ children }) {
           <main>
           <h1>{dict.title}</h1>
           <h2>{dict.description}</h2>
-          <Tarjeta/>
+          <Pokemon/>
           </main>
       </body>
     </html>
