@@ -1,34 +1,12 @@
 'use client'
-import localFont from "next/font/local";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./globals.css";
 import Image from "next/image";
 import { Suspense, useState } from "react";
 import Link from "next/link";
 import { getDictionary } from "@/componentes/diccionario";
 import  "bootstrap/dist/css/bootstrap.min.css";
-import Tarjeta from "./Cartas/Card";
-
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-// export const metadata = {
-//   title: "Página prinicpal de IAW",
-//   description: "Curso 2024/25",
-//   icons: {
-//     icon: '/buscar.png'
-//   }
-// };
-
-
+import Tarjeta from "./Cartas/page";
 
 export default function RootLayout({ children }) {
   let [idioma,setIdioma]=useState('en');
@@ -39,14 +17,15 @@ export default function RootLayout({ children }) {
     }
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <header>
           <nav>
-            <h5><Link href="/">{dict.home}</Link> - 
-            <Link href="/Pokemon" className="principal">Generaciones</Link>
-              <Link href="/Cartas/pokemon1/Tarjetas" className="enlaces">Generacion 1</Link>
-              <Link href="/Cartas/pokemon2/Tarjetas" className="enlaces">Generacion 2</Link>
-              <Link href="/Cartas/pokemon3/Tarjetas" className="enlaces">Generacion 3</Link> - 
+            <h5><a href="/">{dict.home}</a> - 
+            <NavDropdown title="Generaciones" >
+              <NavDropdown.Item href="/Cartas/pokemon1/">{dict.Gen} 1</NavDropdown.Item>
+              <NavDropdown.Item href="/Cartas/pokemon2">{dict.Gen} 2</NavDropdown.Item>
+              <NavDropdown.Item href="/Cartas/pokemon3">{dict.Gen} 3</NavDropdown.Item>
+            </NavDropdown> - 
             <button onClick={() => changeLanguage('es')} className="botton">
 	<Image src="/Españita.jpeg" alt="Español" width={24} height={24} />
 </button>

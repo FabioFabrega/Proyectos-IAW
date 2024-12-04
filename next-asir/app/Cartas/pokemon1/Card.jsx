@@ -1,6 +1,6 @@
 'use client'
 import Card from 'react-bootstrap/Card';
-import { Pokemon2 } from './page';
+import { Pokemon2 } from './pokeapi';
 
 
 function Tarjeta(){
