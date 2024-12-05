@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import '../app/globals.css';
 
-export const Pokemon = ({ id }) => {
+export const Pokemon = ({ generation }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -45,7 +45,7 @@ export const Pokemon = ({ id }) => {
         };
       })
     );
-    setPokemonList(pokemonData);
+    setPokemonList(pokemon);
     useEffect(() => {
       fetchRandomPokemons();
     }, [generation]); 
