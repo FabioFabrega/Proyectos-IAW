@@ -2,15 +2,15 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import '../app/globals.css';
+import Card from 'react-bootstrap/Card';
 
 export const Pokemon = ({ generation }) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [pokemon] = useState([]);
   
-  const fetchRandomPokemons = async () => {
+  const RandomsPokemons = async () => {
     let min, max;
 
     if (generation === 1) {
@@ -30,7 +30,7 @@ export const Pokemon = ({ generation }) => {
         
     const Aleatorio = Array.from({ length: generation === 0 ? 1 : 10 }, idAleatorio);
 
-    const pokemonData = await Promise.all(
+    const data = await Promise.all(
       Aleatorio.map(async (id) => {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
         const data = await response.json();
@@ -45,20 +45,21 @@ export const Pokemon = ({ generation }) => {
         };
       })
     );
-    setPokemonList(pokemon);
+    setPokemonList(data);
     useEffect(() => {
-      fetchRandomPokemons();
+      RandomsPokemons();
     }, [generation]); 
   }
 
   return (
-    <div>
+    <div><Card style={{ width: '18rem' }}>
     <img src={pokemon.img} alt="pokemon" className="pokemon-image" />
       <h1><p className="pokemon-nombre">{pokemon.nombre}:</p></h1>
       <h2><p className="pokemon-numero">Número {pokemon.id}</p></h2>
       <h4><p className="extra"><Button variant="primary" onClick={handleShow}>
         Saber más
-      </Button>
+      </Button></p></h4>
+      </Card>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -74,7 +75,7 @@ export const Pokemon = ({ generation }) => {
             Salir
           </Button>
         </Modal.Footer>
-      </Modal></p></h4>
+      </Modal>
     </div>
   );
 };

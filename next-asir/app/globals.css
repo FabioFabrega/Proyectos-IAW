@@ -4,8 +4,7 @@ h5{
   align-items: center;
   justify-content: center;
 }
-
-header{
+nav{
   display: flex;
   flex: row nowrap;
   align-items: center;
@@ -59,20 +58,3 @@ a {
   justify-content: center;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 10px;
-  background-color: #f4f4f4;
-  justify-content: space-around;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: #007bff;
-}
