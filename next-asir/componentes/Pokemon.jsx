@@ -8,7 +8,7 @@ export const Pokemon = ({ id }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [pokemon, setName] = useState([]);
+  const [pokemon] = useState([]);
   
   const fetchRandomPokemons = async () => {
     let min, max;
@@ -30,31 +30,32 @@ export const Pokemon = ({ id }) => {
         
     const Aleatorio = Array.from({ length: generation === 0 ? 1 : 10 }, idAleatorio);
 
-  useEffect(() => {
-    fetchRandomPokemons();
-    fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
-      .then((res) => res.json())
-      .then((data) =>
-        Aleatorio.map(async (data.id) =>({
-          numero: data.id,
-          img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${idAleatorio}.png`,
-          imgJuego: data.sprites.front_default,
-          imgCvg: data.sprites.other.dream_world.front_default,
+    const pokemonData = await Promise.all(
+      Aleatorio.map(async (id) => {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const data = await response.json();
+        return {
+          id: data.id,
           nombre: data.name,
-          experiencia: data.base_experience,
+          img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
           hp: data.stats[0].base_stat,
           ataque: data.stats[1].base_stat,
           defensa: data.stats[2].base_stat,
           especial: data.stats[3].base_stat,
-        })
-      );)
-  }, []);}
+        };
+      })
+    );
+    setPokemonList(pokemonData);
+    useEffect(() => {
+      fetchRandomPokemons();
+    }, [generation]); 
+  }
 
   return (
     <div>
     <img src={pokemon.img} alt="pokemon" className="pokemon-image" />
       <h1><p className="pokemon-nombre">{pokemon.nombre}:</p></h1>
-      <h2><p className="pokemon-numero">Número {pokemon.numero}</p></h2>
+      <h2><p className="pokemon-numero">Número {pokemon.id}</p></h2>
       <h4><p className="extra"><Button variant="primary" onClick={handleShow}>
         Saber más
       </Button>
