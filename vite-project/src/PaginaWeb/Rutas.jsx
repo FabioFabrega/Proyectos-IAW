@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom";
 import Tarjeta from "./Cards";
-import Nav from "./Nav";
+import Nav from "./Nav2";
 
 export default function Rutas() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import Nav from './Nav2'
 import { BrowserRouter as Router, Route, Routes, useParams, Outlet } from "react-router-dom";
 import Section from './Section'
 import Aside from './Aside'
@@ -24,7 +24,6 @@ function Contenido() {
           <Route path="/about" element={<About2/>} />
         </Routes>
       </aside>
-        {/* <Section/> */}
         <section>
         <Routes>
         <Route exact path="/" element={<Home/>} />
