@@ -13,7 +13,7 @@ const Pokemon1 = ({ id }) => {
     const handleShow = () => setShow(true);
   
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 151) + 1;
+      const idAleatorio = Math.floor(Math.random() * 101) + 152;
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>

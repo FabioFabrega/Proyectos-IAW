@@ -3,9 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
-import '../app/globals.css'
-
-const Pokemon1 = ({ id }) => {
+const Pokemon2 = ({ id }) => {
     const [pokemon, setName] = useState([]);
     const [show, setShow] = useState(false);
   
@@ -13,7 +11,7 @@ const Pokemon1 = ({ id }) => {
     const handleShow = () => setShow(true);
   
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 151) + 1;
+      const idAleatorio = Math.floor(Math.random() * 898) + 1;
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>
@@ -34,15 +32,21 @@ const Pokemon1 = ({ id }) => {
   
     return (
       <div>
-        <Card>
+        <Card style={{ width: '18rem' }}>
           <img src={pokemon.img} alt="pokemon" className="pokemon-image" />
+          <h1>
             <p className="pokemon-nombre">{pokemon.nombre}:</p>
+          </h1>
+          <h2>
             <p className="pokemon-numero">Número {pokemon.numero}</p>
+          </h2>
+          <h4>
             <p className="extra">
               <Button variant="primary" onClick={handleShow}>
                 Saber más
               </Button>
             </p>
+          </h4>
         </Card>
   
         <Modal show={show} onHide={handleClose}>
@@ -74,5 +78,5 @@ const Pokemon1 = ({ id }) => {
     );
   };
   
-  export default Pokemon1;
+  export default Pokemon2;
   
