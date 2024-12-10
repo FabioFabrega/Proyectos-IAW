@@ -4,19 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import '../app/globals.css'
-import { MdCatchingPokemon } from "react-icons/md";
 
-const Pokemon1 = () => {
-  const [loading, setLoading] = useState(true);
+const Pokemon1 = ({ id }) => {
     const [pokemon, setName] = useState([]);
     const [show, setShow] = useState(false);
-    const Anterior = () => setShow(true);
+  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 101) + 152;
-      const Anterior = Math.floor(idAleatorio - 1 )
+      const idAleatorio = Math.floor(Math.random() * 151) + 1;
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>
@@ -33,11 +30,8 @@ const Pokemon1 = () => {
             especial: data.stats[3].base_stat,
           })
         );
-        setLoading(false);
     }, []);
-    if (loading) {
-      return <div><img className="imagen" src="/cargando.gif"></img></div>
-    }
+  
     return (
       <div>
         <Card>
@@ -54,7 +48,7 @@ const Pokemon1 = () => {
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>
-            <MdCatchingPokemon /> Detalle del Pokemon:
+              Número {pokemon.numero} {pokemon.nombre}:
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -71,12 +65,6 @@ const Pokemon1 = () => {
             </h2>
           </Modal.Body>
           <Modal.Footer>
-          <Button variant="secondary" onClick={handleShow}>
-                Anterior
-              </Button>
-              <Button variant="secondary" onClick={handleShow}>
-                Siguiente
-              </Button>
             <Button variant="secondary" onClick={handleClose}>
               Salir
             </Button>

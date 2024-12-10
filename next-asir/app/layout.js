@@ -7,7 +7,6 @@ import { useState } from "react";
 import { getDictionary } from "@/componentes/diccionario";
 import  "bootstrap/dist/css/bootstrap.min.css";
 
-
 export default function RootLayout({ children }) {
   let [idioma,setIdioma]=useState('en');
     let dict=getDictionary(idioma);
@@ -37,11 +36,6 @@ export default function RootLayout({ children }) {
                             <Dropdown.Item><Link href="/pokemon2">
                                 <button className="dropdown-item">
                                     {dict.Gen} 2
-                                </button></Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item><Link href="/pokemon3">
-                                <button className="dropdown-item" onClick={() => setGeneration(3)}>
-                                    {dict.Gen} 3
                                 </button></Link>
                             </Dropdown.Item>
                         </Dropdown.Menu>

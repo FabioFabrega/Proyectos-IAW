@@ -3,15 +3,19 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
-const Pokemon2 = ({ id }) => {
+import '../globals.css'
+import { MdCatchingPokemon } from "react-icons/md";
+
+const Pokemon1 = () => {
+  const [loading, setLoading] = useState(true);
     const [pokemon, setName] = useState([]);
     const [show, setShow] = useState(false);
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+    
+  const idAleatorio = Math.floor(Math.random() * 101) + 152;
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 898) + 1;
+        
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>
@@ -26,33 +30,39 @@ const Pokemon2 = ({ id }) => {
             ataque: data.stats[1].base_stat,
             defensa: data.stats[2].base_stat,
             especial: data.stats[3].base_stat,
-          })
+            
+          }) 
         );
+         setLoading(false); 
     }, []);
-  
+    const Anterior = () => {
+      (idAleatorio > 1)
+    };
+    
+    const Siguiente = () => {
+      (pokemon.numero + 1);
+    };
+    if (loading) {
+      return <div><img className="imagen" src="/cargando.gif"></img></div>
+    }
+
     return (
       <div>
-        <Card style={{ width: '18rem' }}>
+        <Card>
           <img src={pokemon.img} alt="pokemon" className="pokemon-image" />
-          <h1>
             <p className="pokemon-nombre">{pokemon.nombre}:</p>
-          </h1>
-          <h2>
             <p className="pokemon-numero">Número {pokemon.numero}</p>
-          </h2>
-          <h4>
             <p className="extra">
               <Button variant="primary" onClick={handleShow}>
                 Saber más
               </Button>
             </p>
-          </h4>
         </Card>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>
-              Número {pokemon.numero} {pokemon.nombre}:
+            <MdCatchingPokemon /> Número {pokemon.numero} {pokemon.nombre}:
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -69,6 +79,12 @@ const Pokemon2 = ({ id }) => {
             </h2>
           </Modal.Body>
           <Modal.Footer>
+          <Button variant="secondary" onClick={Anterior}>
+                Anterior
+              </Button>
+              <Button variant="secondary" onClick={Siguiente}>
+                Siguiente
+              </Button>
             <Button variant="secondary" onClick={handleClose}>
               Salir
             </Button>
@@ -78,5 +94,5 @@ const Pokemon2 = ({ id }) => {
     );
   };
   
-  export default Pokemon2;
+  export default Pokemon1;
   

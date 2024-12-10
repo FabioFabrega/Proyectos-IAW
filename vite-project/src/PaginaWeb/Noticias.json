@@ -1,0 +1,17 @@
+[
+    {
+        "imagen": "/granada.jpeg",
+        "titulo": "Granada",
+        "texto": "Ciudad universitaria y de encanto nariza de andalucía"
+    },
+    {
+        "imagen": "/logo.png",
+        "titulo": "IES CURA VALERA",
+        "texto": "Instituto de referencia de formación profesional en informática de Andalucía"
+    },
+    {
+        "imagen": "/pokemon.png",
+        "titulo": "POKEAPI",
+        "texto": ""
+    }
+]

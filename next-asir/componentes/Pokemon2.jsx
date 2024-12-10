@@ -4,16 +4,18 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import '../app/globals.css'
+import { MdCatchingPokemon } from "react-icons/md";
 
-const Pokemon1 = ({ id }) => {
+const Pokemon1 = () => {
+  const [loading, setLoading] = useState(true);
     const [pokemon, setName] = useState([]);
     const [show, setShow] = useState(false);
-  
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  
+    
+  const idAleatorio = Math.floor(Math.random() * 101) + 152;
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 101) + 152;
+        
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>
@@ -28,10 +30,22 @@ const Pokemon1 = ({ id }) => {
             ataque: data.stats[1].base_stat,
             defensa: data.stats[2].base_stat,
             especial: data.stats[3].base_stat,
-          })
+            
+          }) 
         );
+         setLoading(false); 
     }, []);
-  
+    const Anterior = () => {
+      (idAleatorio > 1)
+    };
+    
+    const Siguiente = () => {
+      (pokemon.numero + 1);
+    };
+    if (loading) {
+      return <div><img className="imagen" src="/cargando.gif"></img></div>
+    }
+
     return (
       <div>
         <Card>
@@ -48,7 +62,7 @@ const Pokemon1 = ({ id }) => {
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>
-              Número {pokemon.numero} {pokemon.nombre}:
+            <MdCatchingPokemon /> Número {pokemon.numero} {pokemon.nombre}:
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -65,6 +79,12 @@ const Pokemon1 = ({ id }) => {
             </h2>
           </Modal.Body>
           <Modal.Footer>
+          <Button variant="secondary" onClick={Anterior}>
+                Anterior
+              </Button>
+              <Button variant="secondary" onClick={Siguiente}>
+                Siguiente
+              </Button>
             <Button variant="secondary" onClick={handleClose}>
               Salir
             </Button>

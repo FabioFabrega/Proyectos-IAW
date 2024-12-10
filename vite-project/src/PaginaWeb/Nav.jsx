@@ -17,7 +17,8 @@ function Nav() {
         <Link to="/Informatica"><MdCatchingPokemon />Gen3</Link>
         <Link to="/Digimon"><GiDinosaurBones />Extra</Link>
         <Link to="/Contacto"><IoIosContact />Contacto</Link>
-        <Link to="/Contacto2"><IoIosContact />Contacto2</Link>
+        <Link to="/Defensa"><IoIosContact />Contacto2</Link> -
+        <Link to="/Defensa">Defensa</Link>
     </nav>
   )
 }

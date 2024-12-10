@@ -8,6 +8,7 @@ import { CambiarNombre } from './CambiarNombre';
 import Tarjeta from './Cards';
 import Carrusel from '../Carousel';
 import Tarjeta2 from './Cards2'
+import CardDef from './CardsDefensa';
 
 
 function Contenido() {
@@ -17,20 +18,19 @@ function Contenido() {
     <Nav/>
     <main>
       <aside>
-        <Routes>
-          <Route path="/about" element={<About2/>} />
-        </Routes>
+      <Aside/>
+      
       </aside>
         <section>
         <Routes>
         <Route exact path="/" element={<Home/>} />
-	      <Route path="/noticias" element={<Gen1/>}>
-        </Route>
+	      <Route path="/noticias" element={<Gen1/>}/>
         <Route path="/Jefatura" element={<Gen2/>} />
         <Route path="/Informatica" element={<Gen3/>} />
         <Route path="/Digimon" element={<Extra/>} />
         <Route path="/Contacto" element={<Fabio/>} />
         <Route path="/Contacto2" element={<Juan/>} />
+        <Route path="/Defensa" element={<Defensa/>} />
         <Route path="/about" element={<About/>} />
         <Route path="*" element={<NotFound/>} />
         </Routes>
@@ -46,6 +46,9 @@ function Contenido() {
 export default Contenido
 function Home() {
   return <h1>Seleccione uno de los enlaces para ver los pokemons de cada generación</h1>
+}
+function Defensa() {
+  return <div><CardDef/></div>
 }
 
 //Sólo se verá con /about en la URL
