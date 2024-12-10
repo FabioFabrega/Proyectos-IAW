@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+'use client'
+import React, { Children, useState } from 'react';
 import Image from "next/image";
 import Dropdown from 'react-bootstrap/Dropdown';
 import { getDictionary } from "@/componentes/diccionario";
+import { Pokemon } from './Pokemon';
 
 const Nav = ({ setGeneration }) => {
     let [idioma, setIdioma] = useState('en');
@@ -15,7 +17,7 @@ const Nav = ({ setGeneration }) => {
         <div>
             <nav>
                 <h5>
-                    <button type="button" className="btn btn-secondary" onClick={() => setGeneration(0)}>
+                    <button type="button" className="btn btn-secondary" href="/pokemon">
                         {dict.home}
                     </button> -
                     <Dropdown>
@@ -54,6 +56,7 @@ const Nav = ({ setGeneration }) => {
             <main>
                 <h1>{dict.title}</h1>
                 <h2>{dict.description}</h2>
+                {Children}
             </main>
             
         </div>

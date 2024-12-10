@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
 import '../app/globals.css'
 
-const Pokemon1 = ({ id }) => {
+const Pokemon3 = () => {
     const [pokemon, setName] = useState([]);
     const [show, setShow] = useState(false);
   
@@ -13,7 +13,7 @@ const Pokemon1 = ({ id }) => {
     const handleShow = () => setShow(true);
   
     useEffect(() => {
-      const idAleatorio = Math.floor(Math.random() * 151) + 1;
+      const idAleatorio = Math.floor(Math.random() * 135) + 252;
       fetch(`https://pokeapi.co/api/v2/pokemon/${idAleatorio}`)
         .then((res) => res.json())
         .then((data) =>
@@ -74,5 +74,5 @@ const Pokemon1 = ({ id }) => {
     );
   };
   
-  export default Pokemon1;
+  export default Pokemon3;
   
